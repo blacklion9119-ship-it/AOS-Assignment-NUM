@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-km="ប្រាសាទកម្ពុជា | Cambodian Temples" data-lang-en="Cambodian Temples">ប្រាសាទកម្ពុជា | Cambodian Temples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- បន្ថែមរូប Favicon លើ Tab កម្មវិធីរុករក (Browser) -->
+    <link rel="icon" type="image/x-icon" href="icon-angkorwat.png">
+    
+    <style>
+        /* ==========================================================================
+           1. CORE STYLES & VARIABLES
+           ========================================================================== */
+        :root {
+            --primary-color: #8b1e0f;
+            --secondary-color: #d4af37;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-muted: #718096;
+            --navbar-bg: rgba(255, 255, 255, 0.95);
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --text-color: #f7fafc;
+            --text-muted: #a0aec0;
+            --navbar-bg: rgba(26, 32, 44, 0.95);
+            --border-color: #4a5568;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Serif Khmer', 'Poppins', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        [data-theme="dark"] h2 {
+            color: var(--secondary-color);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #6b150a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        /* ==========================================================================
+           2. HEADER & NAVBAR
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--navbar-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: var(--primary-color);
+        }
+        .logo h2::after { display: none; }
+
+        [data-theme="dark"] .logo h2 {
+            color: var(--secondary-color);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .controls-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: var(--transition);
+            padding: 5px;
+        }
+
+        .lang-btn {
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: var(--card-bg);
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.pexels.com/photos/3217663/pexels-photo-3217663.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 70px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* ==========================================================================
+           4. ABOUT & STATS SECTION
+           ========================================================================== */
+        .about .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .stats {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* ==========================================================================
+           5. SEARCH SECTION
+           ========================================================================== */
+        .search-section {
+            background-color: var(--card-bg);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .search-section h2 { font-size: 1.5rem; margin-bottom: 20px;}
+        .search-section h2::after { display: none; }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 45px;
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(139, 30, 15, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           6. TEMPLE CARDS & READ MORE FEATURE
+           ========================================================================== */
+        .temple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px
+        }
+
+        .temple-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            max-width: 380px; 
+            width: 100%;
+        }
+
+        .temple-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .temple-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card-content p.short-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* Expanded Details Area */
+        .more-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
+        }
+
+        .more-content.open {
+            max-height: 1000px;
+            opacity: 1;
+            transition: max-height 0.5s ease-in-out, opacity 0.4s ease;
+            margin-bottom: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .features-list {
+            margin-top: 12px;
+            padding-left: 20px;
+            list-style-type: square;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .features-list li {
+            margin-bottom: 6px;
+        }
+
+        .read-more {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            align-self: flex-start;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .read-more {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .read-more:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        [data-theme="dark"] .read-more:hover {
+            background-color: var(--secondary-color);
+            color: #1a202c;
+        }
+
+        /* ==========================================================================
+           7. GALLERY SECTION
+           ========================================================================== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid div {
+            overflow: hidden;
+            border-radius: 8px;
+            height: 200px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.08);
+        }
+
+        /* ==========================================================================
+           8. CONTACT SECTION & NEW FOOTER STYLES
+           ========================================================================== */
+        .contact .container {
+            max-width: 600px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            outline: none;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact input:focus, .contact textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        .contact button {
+            align-self: center;
+        }
+
+        /* ផ្នែកកូដរចនា Footer ថ្មី */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 60px 0 20px 0;
+            border-top: 4px solid var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-col p {
+            line-height: 1.8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-col .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .footer-col .social-links a {
+            color: #ffffff;
+            background-color: #2d3748;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .footer-col .social-links a:hover {
+            background-color: var(--secondary-color);
+            color: #1a202c;
+            transform: translateY(-3px);
+        }
+
+        .footer-col ul li i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #2d3748;
+            font-size: 0.9rem;
+        }
+
+        /* Back To Top Button */
+        #topBtn {
+            position: fixed;
+            bottom: 30px;
+            right: -60px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        #topBtn.show {
+            right: 30px;
+        }
+
+        /* ==========================================================================
+           10. MOBILE & TABLET RESPONSIVE STYLES (ការកែសម្រួលសម្រាប់ទូរស័ព្ទ)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .navbar {
+                height: 60px;
+                padding: 0 15px;
+            }
+            .logo h2 {
+                font-size: 1.2rem;
+            }
+            .nav-right {
+                gap: 10px;
+            }
+            .lang-btn {
+                padding: 3px 8px;
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding-top: 60px;
+                height: 80vh;
+            }
+            .hero-content h1 { 
+                font-size: 1.8rem; 
+                padding: 0 10px;
+            }
+            .hero-content p { 
+                font-size: 0.95rem; 
+                padding: 0 15px;
+                margin-bottom: 20px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+            h2 {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .stat-card h3 {
+                font-size: 2rem;
+            }
+
+            .temple-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 5px;
+            }
+            .temple-card img {
+                height: 180px;
+            }
+            .card-content {
+                padding: 15px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .gallery-grid div {
+                height: 140px;
+            }
+
+            .contact .container {
+                padding: 0 15px;
+            }
+            .contact input, .contact textarea {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            .contact button {
+                width: 100%;
+                padding: 12px;
+            }
+
+            #topBtn {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+            }
+            #topBtn.show {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="icon-angkorwat.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 25%; object-fit: cover;">
+    
+                <h2 data-lang-km="ប្រាសាទកម្ពុជា" data-lang-en="Cambodian Temples">ប្រាសាទកម្ពុជា</h2>
+            </div>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home" data-lang-km="ទំព័រដើម" data-lang-en="Home">ទំព័រដើម</a></li>
+                    <li><a href="#about" data-lang-km="អំពី" data-lang-en="About">អំពី</a></li>
+                    <li><a href="#temples" data-lang-km="ប្រាសាទ" data-lang-en="Temples">ប្រាសាទ</a></li>
+                    <li><a href="#gallery" data-lang-km="រូបភាព" data-lang-en="Gallery">រូបភាព</a></li>
+                    <li><a href="#contact" data-lang-km="ទំនាក់ទំនង" data-lang-en="Contact">ទំនាក់ទំនង</a></li>
+                </ul>
+
+                <button id="langBtn" class="controls-btn lang-btn">EN</button>
+                <button id="darkModeBtn" class="controls-btn">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-lang-km="ប្រាសាទដ៏អស្ចារ្យនៃកម្ពុជា" data-lang-en="The Magnificent Temples of Cambodia">ប្រាសាទដ៏អស្ចារ្យនៃកម្ពុជា</h1>
+            <p data-lang-km="ស្វែងយល់ពីប្រវត្តិសាស្ត្រ វប្បធម៌ និងស្ថាបត្យកម្មដ៏អស្ចារ្យរបស់អាណាចក្រខ្មែរ។" data-lang-en="Explore the rich history, deep culture, and breathtaking architecture of the Khmer Empire.">
+                ស្វែងយល់ពីប្រវត្តិសាស្ត្រ វប្បធម៌ និងស្ថាបត្យកម្មដ៏អស្ចារ្យរបស់អាណាចក្រខ្មែរ។
+            </p>
+            <a href="#temples" class="btn" data-lang-km="ស្វែងយល់បន្ថែម" data-lang-en="Discover More">ស្វែងយល់បន្ថែម</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 data-lang-km="អំពីប្រាសាទកម្ពុជា" data-lang-en="About Cambodian Temples">អំពីប្រាសាទកម្ពុជា</h2>
+            <p data-lang-km="ប្រទេសកម្ពុជាមានប្រាសាទបុរាណជាច្រើន ដែលត្រូវបានកសាងឡើងក្នុងសម័យអាណាចក្រខ្មែរ។ ប្រាសាទទាំងនេះបង្ហាញពីភាពរុងរឿងនៃអរិយធម៌ខ្មែរ និងជាមរតកវប្បធម៌ដ៏មានតម្លៃសម្រាប់មនុស្សជាតិ។" 
+               data-lang-en="Cambodia is home to thousands of ancient temples constructed during the Khmer Empire. These architectural marvels reflect the peak of Khmer civilization and remain an invaluable cultural heritage for all mankind.">
+                ប្រទេសកម្ពុជាមានប្រាសាទបុរាណជាច្រើន ដែលត្រូវបានកសាងឡើងក្នុងសម័យអាណាចក្រខ្មែរ។ ប្រាសាទទាំងនេះបង្ហាញពីភាពរុងរឿងនៃអរិយធម៌ខ្មែរ និងជាមរតកវប្បធម៌ដ៏មានតម្លៃសម្រាប់មនុស្សជាតិ។
+            </p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <h3 class="counter" data-target="72">0</h3>
+                <p data-lang-km="ប្រាសាទល្បីៗ" data-lang-en="Famous Temples">ប្រាសាទល្បីៗ</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="1000">0</h3>
+                <p data-lang-km="ឆ្នាំប្រវត្តិសាស្ត្រ" data-lang-en="Years of History">ឆ្នាំប្រវត្តិសាស្ត្រ</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="counter" data-target="2600000">0</h3>
+                <p data-lang-km="ភ្ញៀវទេសចរប្រចាំឆ្នាំ" data-lang-en="Annual Visitors">ភ្ញៀវទេសចរប្រចាំឆ្នាំ</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <h2 data-lang-km="ស្វែងរកប្រាសាទ" data-lang-en="Search Temples">ស្វែងរកប្រាសាទ</h2>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="ស្វែងរកឈ្មោះប្រាសាទ..." data-placeholder-km="ស្វែងរកឈ្មោះប្រាសាទ..." data-placeholder-en="Search temple names...">
+            </div>
+        </div>
+    </section>
+
+    <section id="temples" class="temples">
+        <div class="container">
+            <h2 data-lang-km="ប្រាសាទល្បីៗ" data-lang-en="Famous Temples">ប្រាសាទល្បីៗ</h2>
+
+            <div class="temple-grid">
+
+                <div class="temple-card">
+                    <img src="https://images.pexels.com/photos/3217663/pexels-photo-3217663.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Angkor Wat">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទអង្គរវត្ត" data-lang-en="Angkor Wat">ប្រាសាទអង្គរវត្ត</h3>
+                        <p class="short-desc" data-lang-km="ប្រាសាទដ៏ធំបំផុតក្នុងពិភពលោក និងជានិមិត្តសញ្ញានៃប្រទេសកម្ពុជា។" data-lang-en="The largest religious monument in the world and the national symbol of Cambodia.">
+                            ប្រាសាទដ៏ធំបំផុតក្នុងពិភពលោក និងជានិមិត្តសញ្ញានៃប្រទេសកម្ពុជា។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="កសាងឡើងនៅដើមសតវត្សរ៍ទី១២ ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសដល់ព្រះវិស្ណុ។ វាត្រូវបានចុះបញ្ជីជាបេតិកភណ្ឌពិភពលោកយូណេស្កូក្នុងឆ្នាំ ១៩៩២។" 
+                               data-lang-en="Built in the early 12th century by King Suryavarman II as a Hindu temple dedicated to Vishnu. It was inscribed as a UNESCO World Heritage site in 1992.">
+                                កសាងឡើងនៅដើមសតវត្សរ៍ទី១២ ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសដល់ព្រះវិស្ណុ។ វាត្រូវបានចុះបញ្ជីជាបេតិកភណ្ឌពិភពលោកយូណេស្កូក្នុងឆ្នាំ ១៩៩២។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ ខេត្តសៀមរាប" data-lang-en="Location: Siem Reap Province">ទីតាំង៖ ខេត្តសៀមរាប</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ រូបឆ្លាក់អប្សរាជាង ២,០០០ និងចម្លាក់ថែវវែងអន្លាយ" data-lang-en="Key Feature: Over 2,000 Apsara bas-relief carvings and extensive galleries">លក្ខណៈពិសេស៖ រូបឆ្លាក់អប្សរាជាង ២,០០០ និងចម្លាក់ថែវវែងអន្លាយ</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+                <div class="temple-card">
+                    <img src="https://images.pexels.com/photos/5278961/pexels-photo-5278961.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bayon">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទបាយ័ន" data-lang-en="Bayon Temple">ប្រាសាទបាយ័ន</h3>
+                        <p class="short-desc" data-lang-km="ល្បីល្បាញដោយសារផ្ទៃមុខថ្មធំៗ ដែលឆ្លាក់លើប៉ម។" data-lang-en="Famed for its massive, serene stone faces carved into its many towers.">
+                            ល្បីល្បាញដោយសារផ្ទៃមុខថ្មធំៗ ដែលឆ្លាក់លើប៉ម។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="ស្ថិតនៅចំកណ្តាលនៃរាជធានីអង្គរធំ កសាងឡើងនៅចុងសតវត្សរ៍ទី១២ ដោយព្រះបាទជ័យវរ្ម័នទី៧ ជាប្រាសាទរដ្ឋតំណាងឲ្យព្រះពុទ្ធសាសនាមហាយាន។" 
+                               data-lang-en="Located at the exact center of Angkor Thom capital, built in the late 12th century by King Jayavarman VII as his state Mahayana Buddhist temple.">
+                                ស្ថិតនៅចំកណ្តាលនៃរាជធានីអង្គរធំ កសាងឡើងនៅចុងសតវត្សរ៍ទី១២ ដោយព្រះបាទជ័យវរ្ម័នទី៧ ជាប្រាសាទរដ្ឋតំណាងឲ្យព្រះពុទ្ធសាសនាមហាយាន។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ ក្រុងអង្គរធំ ខេត្តសៀមរាប" data-lang-en="Location: Angkor Thom, Siem Reap">ទីតាំង៖ ក្រុងអង្គរធំ ខេត្តសៀមរាប</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ មានកំពូលមុខព្រហ្មញញឹមដ៏អាថ៌កំបាំង" data-lang-en="Key Feature: Mystical smiling faces overlooking the towers">លក្ខណៈពិសេស៖ មានកំពូលមុខព្រហ្មញញឹមដ៏អាថ៌កំបាំង</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+                <div class="temple-card">
+                    <img src="https://images.pexels.com/photos/1089302/pexels-photo-1089302.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ta Prohm">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទតាព្រហ្ម" data-lang-en="Ta Prohm">ប្រាសាទតាព្រហ្ម</h3>
+                        <p class="short-desc" data-lang-km="ប្រាសាទដែលរុក្ខជាតិធំៗ ដុះគ្របដណ្តប់លើសំណង់បុរាណ។" data-lang-en="Left untouched, this temple is bound by the massive root systems of silk-cotton trees.">
+                            ប្រាសាទដែលរុក្ខជាតិធំៗ ដុះគ្របដណ្តប់លើសំណង់បុរាណ។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="កសាងក្នុងឆ្នាំ ១១៨៦ ដោយព្រះបាទជ័យវរ្ម័នទី៧ ដើម្បីឧទ្ទិសថ្វាយមាតារបស់ព្រះអង្គ។ ត្រូវបានរក្សាទុកឲ្យនៅសភាពដើមដែលហ៊ុំព័ទ្ធដោយធម្មជាតិព្រៃឈើ។" 
+                               data-lang-en="Built in 1186 by King Jayavarman VII in honor of his mother. It was intentionally left in its natural state mixed with roots and jungle environments.">
+                                កសាងក្នុងឆ្នាំ ១១៨៦ ដោយព្រះបាទជ័យវរ្ម័នទី៧ ដើម្បីឧទ្ទិសថ្វាយមាតារបស់ព្រះអង្គ។ ត្រូវបានរក្សាទុកឲ្យនៅសភាពដើមដែលហ៊ុំព័ទ្ធដោយធម្មជាតិព្រៃឈើ។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ ភាគខាងកើតនៃអង្គរធំ" data-lang-en="Location: East of Angkor Thom">ទីតាំង៖ ភាគខាងកើតនៃអង្គរធំ</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ បរិយាកាសព្រៃឈើ និងឫសឈើយក្សដុះលើដំបូលប្រាសាទ" data-lang-en="Key Feature: Photogenic giant roots intertwining into old stones">លក្ខណៈពិសេស៖ បរិយាកាសព្រៃឈើ និងឫសឈើយក្សដុះលើដំបូលប្រាសាទ</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+                <div class="temple-card">
+                    <img src="https://images.pexels.com/photos/36821968/pexels-photo-36821968.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Banteay Srei">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទបន្ទាយស្រី" data-lang-en="Banteay Srei">ប្រាសាទបន្ទាយស្រី</h3>
+                        <p class="short-desc" data-lang-km="ល្បីដោយសារក្បាច់ចម្លាក់លម្អិត និងថ្មពណ៌ផ្កាឈូក។" data-lang-en="Renowned for its intricate, fine bas-reliefs carved on unique pinkish sandstone.">
+                            ល្បីដោយសារក្បាច់ចម្លាក់លម្អិត និងថ្មពណ៌ផ្កាឈូក។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="កសាងឡើងនៅសតវត្សរ៍ទី១០ ក្នុងរជ្ជកាលព្រះបាទរាជេន្ទ្រវរ្ម័ន និងព្រះបាទជ័យវរ្ម័នទី៥។ ជាប្រាសាទតូចតែមានក្បាច់ចម្លាក់ល្អឯកដាច់គេ។" 
+                               data-lang-en="Built in the 10th century during the reigns of Rajendravarman and Jayavarman V. A miniature layout containing arguably the finest carvings in Khmer art history.">
+                                កសាងឡើងនៅសតវត្សរ៍ទី១០ ក្នុងរជ្ជកាលព្រះបាទរាជេន្ទ្រវរ្ម័ន និងព្រះបាទជ័យវរ្ម័នទី៥។ ជាប្រាសាទតូចតែមានក្បាច់ចម្លាក់ល្អឯកដាច់គេ។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ តំបន់បន្ទាយស្រី ខេត្តសៀមរាប" data-lang-en="Location: Banteay Srei District, Siem Reap">ទីតាំង៖ តំបន់បន្ទាយស្រី ខេត្តសៀមរាប</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ ចម្លាក់ក្រឡោតទាបជ្រៅ លម្អិតឥតខ្ចោះលើថ្មភក់ពណ៌ផ្កាឈូក" data-lang-en="Key Feature: Extremely detailed three-dimensional deep carvings">លក្ខណៈពិសេស៖ ចម្លាក់ក្រឡោតទាបជ្រៅ លម្អិតឥតខ្ចោះលើថ្មភក់ពណ៌ផ្កាឈូក</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+                <div class="temple-card">
+                    <img src="https://static.wixstatic.com/media/949475_758c791239d1439eb6d1a54729e707c1~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80/preah_vihear.jpg" alt="Preah Vihear">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទព្រះវិហារ" data-lang-en="Preah Vihear Temple">ប្រាសាទព្រះវិហារ</h3>
+                        <p class="short-desc" data-lang-km="ប្រាសាទដ៏អស្ចារ្យ ស្ថិតនៅលើកំពូលភ្នំដងរែក ជាប់ព្រំដែន។" data-lang-en="An extraordinary clifftop temple perched on the edge of the Dângrêk Mountains.">
+                            ប្រាសាទដ៏អស្ចារ្យ ស្ថិតនៅលើកំពូលភ្នំដងរែក ជាប់ព្រំដែន។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="ត្រូវបានកសាងឡើងជាបន្តបន្ទាប់តាំងពីសតវត្សរ៍ទី៩ ដល់ទី១២ ដោយព្រះមហាក្សត្រជាច្រើនអង្គ ឧទ្ទិសដល់ព្រះសិវៈ។ បានចុះបញ្ជីយូណេស្កូក្នុងឆ្នាំ ២០០៨។" 
+                               data-lang-en="Constructed continuously from the 9th to 12th centuries by successive kings, dedicated to Shiva. Listed as a UNESCO World Heritage site in 2008.">
+                                ត្រូវបានកសាងឡើងជាបន្តបន្ទាប់តាំងពីសតវត្សរ៍ទី៩ ដល់ទី១២ ដោយព្រះមហាក្សត្រជាច្រើនអង្គ ឧទ្ទិសដល់ព្រះសិវៈ។ បានចុះបញ្ជីយូណេស្កូក្នុងឆ្នាំ ២០០៨។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ ជួរភ្នំដងរែក ខេត្តព្រះវិហារ" data-lang-en="Location: Dângrêk Mountains, Preah Vihear">ទីតាំង៖ ជួរភ្នំដងរែក ខេត្តព្រះវិហារ</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ រចនាបទវែងអន្លាយតាមអ័ក្សភ្នំ និងទិដ្ឋភាពដ៏ស្រស់ស្អាតពីលើកំពូលភ្នំ" data-lang-en="Key Feature: Built along an 800-meter north-south axis with clifftop vistas">លក្ខណៈពិសេស៖ រចនាបទវែងអន្លាយតាមអ័ក្សភ្នំ និងទិដ្ឋភាពដ៏ស្រស់ស្អាតពីលើកំពូលភ្នំ</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-lang-km="អានបន្ថែម" data-lang-en="Read More" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+                <div class="temple-card">
+                    <img src="https://media.istockphoto.com/id/1208555028/photo/view-of-the-seven-tiered-pyramid-at-koh-ker-prasat-thom-of-koh-ker-temple-site.jpg?s=612x612&w=0&k=20&c=Yi_y4UZmyYk6hnZAz8axGdMhTDsScEnx0EijWLO26ZQ=" alt="Koh Ker">
+                    <div class="card-content">
+                        <h3 data-lang-km="ប្រាសាទកោះកេរ" data-lang-en="Koh Ker Temple">ប្រាសាទកោះកេរ</h3>
+                        <p class="short-desc" data-lang-km="អតីតរាជធានីបុរាណ ដែលល្បីល្បាញដោយសារប្រាសាទរាងពីរ៉ាមីត ៧ជាន់។" data-lang-en="An isolated ancient capital defined by its unique 7-tiered pyramid temple structure.">
+                            អតីតរាជធានីបុរាណ ដែលល្បីល្បាញដោយសារប្រាសាទរាងពីរ៉ាមីត ៧ជាន់។
+                        </p>
+                        <div class="more-content">
+                            <p data-lang-km="កសាងឡើងដោយព្រះបាទជ័យវរ្ម័នទី៤ ក្នុងសតវត្សរ៍ទី១០ (ឆ្នាំ ៩២៨-៩៤៤)។ ប្រាសាទធំជាងគេគឺ ប្រាសាទប្រាង្គ ដែលមានទម្រង់ប្លែកពីប្រាសាទខ្មែរដទៃ។ បានចុះបញ្ជីយូណេស្កូឆ្នាំ ២០០៨។" 
+                               data-lang-en="Built by King Jayavarman IV in the 10th century when the capital shifted briefly. Its primary pyramid temple (Prasat Prang) stands unique in Khmer arts. Inscribed by UNESCO in 2023.">
+                                កសាងឡើងដោយព្រះបាទជ័យវរ្ម័នទី៤ ក្នុងសតវត្សរ៍ទី១០ (ឆ្នាំ ៩២៨-៩៤៤)។ ប្រាសាទធំជាងគេគឺ ប្រាសាទប្រាង្គ ដែលមានទម្រង់ប្លែកពីប្រាសាទខ្មែរដទៃ។ បានចុះបញ្ជីយូណេស្កូឆ្នាំ ២០០៨។
+                            </p>
+                            <ul class="features-list">
+                                <li data-lang-km="ទីតាំង៖ ស្រុកគូលែន ខេត្តព្រះវិហារ" data-lang-en="Location: Kulen District, Preah Vihear">ទីតាំង៖ ស្រុកគូលែន ខេត្តព្រះវិហារ</li>
+                                <li data-lang-km="លក្ខណៈពិសេស៖ ស្ថាបត្យកម្មរាងពីរ៉ាមីតកាត់កែងស្រដៀងនឹងអរិយធម៌ម៉ាយ៉ា" data-lang-en="Key Feature: Majestic 7-tier pyramid style layout mimicking Maya designs">ស្ថាបត្យកម្មរាងពីរ៉ាមីតកាត់កែងស្រដៀងនឹងអរិយធម៌ម៉ាយ៉ា</li>
+                            </ul>
+                        </div>
+                        <button class="read-more" data-btn-more-km="អានបន្ថែម" data-btn-more-en="Read More" data-btn-less-km="បង្ហាញតិចតួច" data-btn-less-en="Show Less">អានបន្ថែម</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 data-lang-km="វិចិត្រសាលរូបភាព" data-lang-en="Photo Gallery">វិចិត្រសាលរូបភាព</h2>
+            <div class="gallery-grid">
+                <div><img src="https://images.pexels.com/photos/3217663/pexels-photo-3217663.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Angkor"></div>
+                <div><img src="https://images.pexels.com/photos/5278961/pexels-photo-5278961.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Bayon"></div>
+                <div><img src="https://images.pexels.com/photos/1089302/pexels-photo-1089302.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ta Prohm"></div>
+                <div><img src="https://images.pexels.com/photos/36821968/pexels-photo-36821968.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Banteay Srei"></div>
+                <div><img src="https://static.wixstatic.com/media/949475_758c791239d1439eb6d1a54729e707c1~mv2.jpg/v1/fill/w_400,h_300,al_c/p.jpg" alt="Preah Vihear"></div>
+                <div><img src="https://images.pexels.com/photos/36703205/pexels-photo-36703205.jpeg" alt="Angkor Sunrise"></div>
+                <div><img src="https://images.pexels.com/photos/4300957/pexels-photo-4300957.jpeg" alt="Apsara"></div>
+                <div><img src="https://media.istockphoto.com/id/1208555028/photo/view-of-the-seven-tiered-pyramid-at-koh-ker-prasat-thom-of-koh-ker-temple-site.jpg?s=612x612&w=0&k=20&c=Yi_y4UZmyYk6hnZAz8axGdMhTDsScEnx0EijWLO26ZQ=" alt="Koh Ker"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-lang-km="ទំនាក់ទំនង" data-lang-en="Contact Us">ទំនាក់ទំនង</h2>
+            <form id="contactForm">
+                <input type="text" id="nameInput" placeholder="ឈ្មោះ" data-placeholder-km="ឈ្មោះ" data-placeholder-en="Your Name" required>
+                <input type="email" id="emailInput" placeholder="អ៊ីមែល" data-placeholder-km="អ៊ីមែល" data-placeholder-en="Your Email" required>
+                <textarea id="messageInput" placeholder="សារ" data-placeholder-km="សារ" data-placeholder-en="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn" data-lang-km="ផ្ញើសារ" data-lang-en="Send Message">ផ្ញើសារ</button>
+            </form>
+        </div>
+    </section>
+
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="container footer-grid">
+            
+            <div class="footer-col">
+                <h4 data-lang-km="អំពីយើង" data-lang-en="About Us">អំពីយើង</h4>
+                <p data-lang-km="គេហទំព័រនេះបង្កើតឡើងក្នុងគោលបំណងថែរក្សា និងផ្សព្វផ្សាយនូវតម្លៃវប្បធម៌ ស្ថាបត្យកម្មដ៏អស្ចារ្យនៃប្រាសាទបុរាណខ្មែរទៅកាន់ពិភពលោក។" 
+                   data-lang-en="This website is dedicated to preserving and promoting the magnificent cultural and architectural values of ancient Khmer temples to the world.">
+                    គេហទំព័រនេះបង្កើតឡើងក្នុងគោលបំណងថែរក្សា និងផ្សព្វផ្សាយនូវតម្លៃវប្បធម៌ ស្ថាបត្យកម្មដ៏អស្ចារ្យនៃប្រាសាទបុរាណខ្មែរទៅកាន់ពិភពលោក។
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-lang-km="តំណភ្ជាប់រហ័ស" data-lang-en="Quick Links">តំណភ្ជាប់រហ័ស</h4>
+                <ul>
+                    <li><a href="#home" data-lang-km="ទំព័រដើម" data-lang-en="Home">ទំព័រដើម</a></li>
+                    <li><a href="#about" data-lang-km="អំពីប្រាសាទ" data-lang-en="About">អំពីប្រាសាទ</a></li>
+                    <li><a href="#temples" data-lang-km="ប្រាសាទល្បីៗ" data-lang-en="Famous Temples">ប្រាសាទល្បីៗ</a></li>
+                    <li><a href="#gallery" data-lang-km="វិចិត្រសាលរូបភាព" data-lang-en="Gallery">វិចិត្រសាលរូបភាព</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-lang-km="ទំនាក់ទំនង" data-lang-en="Contact Info">ទំនាក់ទំនង</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span data-lang-km="ភ្នំពេញ, ប្រទេសកម្ពុជា" data-lang-en="Phnom Penh, Cambodia">ភ្នំពេញ, ប្រទេសកម្ពុជា</span></li>
+                    <li><i class="fas fa-phone"></i> +855 12 345 678</li>
+                    <li><i class="fas fa-envelope"></i> info@cambodiantemples.com</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Cambodian Temples. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 9.1 Multi-Language Toggle Logic ---
+            let currentLang = 'km'; 
+            const langBtn = document.getElementById('langBtn');
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'km' ? 'en' : 'km';
+                langBtn.textContent = currentLang === 'km' ? 'EN' : 'ខ្មែរ';
+                
+                document.querySelectorAll('[data-lang-km]').forEach(el => {
+                    el.textContent = currentLang === 'km' ? el.getAttribute('data-lang-km') : el.getAttribute('data-lang-en');
+                });
+
+                document.querySelectorAll('[data-placeholder-km]').forEach(el => {
+                    const phrase = currentLang === 'km' ? el.getAttribute('data-placeholder-km') : el.getAttribute('data-placeholder-en');
+                    el.setAttribute('placeholder', phrase);
+                });
+
+                document.querySelectorAll('.read-more').forEach(btn => {
+                    const isOpened = btn.previousElementSibling.classList.contains('open');
+                    if (isOpened) {
+                        btn.textContent = currentLang === 'km' ? btn.getAttribute('data-btn-less-km') : btn.getAttribute('data-btn-less-en');
+                    } else {
+                        btn.textContent = currentLang === 'km' ? btn.getAttribute('data-btn-more-km') : btn.getAttribute('data-btn-more-en');
+                    }
+                });
+            }
+            langBtn.addEventListener('click', toggleLanguage);
+
+
+            // --- 9.2 Read More Toggle Interaction ---
+            document.querySelectorAll('.read-more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const expandedBox = this.previousElementSibling; 
+                    expandedBox.classList.toggle('open');
+                    
+                    const isOpened = expandedBox.classList.contains('open');
+                    if (isOpened) {
+                        this.textContent = currentLang === 'km' ? this.getAttribute('data-btn-less-km') : this.getAttribute('data-btn-less-en');
+                    } else {
+                        this.textContent = currentLang === 'km' ? this.getAttribute('data-btn-more-km') : this.getAttribute('data-btn-more-en');
+                    }
+                });
+            });
+
+
+            // --- 9.3 Theme Changer (Dark/Light Mode) ---
+            const darkModeBtn = document.getElementById('darkModeBtn');
+            darkModeBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    darkModeBtn.textContent = '🌙';
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    darkModeBtn.textContent = '☀️';
+                }
+            });
+
+
+            // --- 9.4 Real-time Filter Search (រក្សាទម្រង់កាតតូចស្អាតជានិច្ច) ---
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                const cards = document.querySelectorAll('.temple-card');
+
+                cards.forEach(card => {
+                    const titleElement = card.querySelector('h3');
+                    const textContentKM = titleElement.getAttribute('data-lang-km').toLowerCase();
+                    const textContentEN = titleElement.getAttribute('data-lang-en').toLowerCase();
+
+                    if (textContentKM.includes(query) || textContentEN.includes(query)) {
+                        // ប្រើ "" ដើម្បីលុប Inline Style ចេញ ឱ្យវាទៅប្រើប្រាស់ display ដើមរបស់ CSS ធំ
+                        card.style.display = ""; 
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+
+            // --- 9.5 Animated Counter Logic (កែសម្រួលថ្មីសម្រាប់បង្ហាញសញ្ញា + និង M+) ---
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/[^0-9]/g, ''); 
+                    const inc = Math.ceil(target / speed);
+
+                    if (count < target) {
+                        counter.innerText = count + inc;
+                        setTimeout(updateCount, 1);
+                    } else {
+                        if (target === 72) {
+                            counter.innerText = "72+";
+                        } else if (target === 1000) {
+                            counter.innerText = "1,000+";
+                        } else if (target === 2600000) {
+                            counter.innerText = "2.6M+"; 
+                        } else {
+                            counter.innerText = target.toLocaleString() + "+";
+                        }
+                    }
+                };
+                updateCount();
+            });
+
+
+            // --- 9.6 Smooth Scroll Top Trigger Button ---
+            const topBtn = document.getElementById('topBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    topBtn.classList.add('show');
+                } else {
+                    topBtn.classList.remove('show');
+                }
+            });
+            topBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+
+            // --- 9.7 Contact Form Submission via Google Forms ---
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+
+                const nameValue = document.getElementById('nameInput').value;
+                const emailValue = document.getElementById('emailInput').value;
+                const messageValue = document.getElementById('messageInput').value;
+
+                // លេខសម្គាល់ដែលដកស្រង់ចេញពី Google Form របស់បងផ្ទាល់
+                const formID = "1FAIpQLSfu6IADzqLKCunE2VbUKlOf3VKRgqFFWgGFub_oBfYPtcqIww"; 
+                const nameEntryID = "entry.195372849";    
+                const emailEntryID = "entry.558083367";   
+                const messageEntryID = "entry.2089990484"; 
+
+                const googleFormURL = `https://docs.google.com/forms/d/e/${formID}/formResponse`;
+
+                const formData = new FormData();
+                formData.append(nameEntryID, nameValue);
+                formData.append(emailEntryID, emailValue);
+                formData.append(messageEntryID, messageValue);
+
+                fetch(googleFormURL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: formData
+                });
+
+                setTimeout(function() {
+                    alert(currentLang === 'km' ? 'បានផ្ញើសារដោយជោគជ័យ!' : 'Message sent successfully!');
+                    contactForm.reset();
+                }, 400); 
+            });
+        });
+    </script>
+</body>
+</html>
