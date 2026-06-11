@@ -6,7 +6,6 @@
     <title data-lang-km="ប្រាសាទកម្ពុជា | Cambodian Temples" data-lang-en="Cambodian Temples">ប្រាសាទកម្ពុជា | Cambodian Temples</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- បន្ថែមរូប Favicon លើ Tab កម្មវិធីរុករក (Browser) -->
     <link rel="icon" type="image/x-icon" href="icon-angkorwat.png">
     
     <style>
@@ -577,6 +576,65 @@
         }
 
         /* ==========================================================================
+           11. LIGHTBOX POPUP FEATURE (មុខងារពង្រីករូបភាពធំ)
+           ========================================================================== */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 4px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox.show .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* បន្ថែម Cursor សញ្ញាពង្រីកលើរូបភាពដែលអាចចុចបាន */
+        .gallery-grid img, .temple-card img {
+            cursor: zoom-in;
+        }
+
+        /* ==========================================================================
            10. MOBILE & TABLET RESPONSIVE STYLES (ការកែសម្រួលសម្រាប់ទូរស័ព្ទ)
            ========================================================================== */
         @media (max-width: 768px) {
@@ -758,7 +816,7 @@
                             ប្រាសាទដ៏ធំបំផុតក្នុងពិភពលោក និងជានិមិត្តសញ្ញានៃប្រទេសកម្ពុជា។
                         </p>
                         <div class="more-content">
-                            <p data-lang-km="កសាងឡើងនៅដើមសតវត្សរ៍ទី១២ ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសដល់ព្រះវិស្ណុ។ វាត្រូវបានចុះបញ្ជីជាបេតិកភណ្ឌពិភពលោកយូណេស្កូក្នុងឆ្នាំ ១៩៩២។" 
+                            <p data-lang-km="កសាងឡើងនៅដើមសតវត្សរ៍ទី១២ ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសដល់ព្រះវិស្ណុ。 វាត្រូវបានចុះបញ្ជីជាបេតិកភណ្ឌពិភពលោកយូណេស្កូក្នុងឆ្នាំ ១៩៩២។" 
                                data-lang-en="Built in the early 12th century by King Suryavarman II as a Hindu temple dedicated to Vishnu. It was inscribed as a UNESCO World Heritage site in 1992.">
                                 កសាងឡើងនៅដើមសតវត្សរ៍ទី១២ ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសដល់ព្រះវិស្ណុ។ វាត្រូវបានចុះបញ្ជីជាបេតិកភណ្ឌពិភពលោកយូណេស្កូក្នុងឆ្នាំ ១៩៩២។
                             </p>
@@ -910,12 +968,17 @@
 
     <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
+    <div id="imageLightbox" class="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-img" id="lightboxSrc" src="" alt="Large View">
+    </div>
+
     <footer>
         <div class="container footer-grid">
             
             <div class="footer-col">
                 <h4 data-lang-km="អំពីយើង" data-lang-en="About Us">អំពីយើង</h4>
-                <p data-lang-km="គេហទំព័រនេះបង្កើតឡើងក្នុងគោលបំណងថែរក្សា និងផ្សព្វផ្សាយនូវតម្លៃវប្បធម៌ ស្ថាបត្យកម្មដ៏អស្ចារ្យនៃប្រាសាទបុរាណខ្មែរទៅកាន់ពិភពលោក។" 
+                <p data-lang-km="គេហទំព័រនេះបង្កើតឡើងក្នុងគោលបំណងថែរក្សា និងផ្សព្វផ្សាយនូវតម្លៃវប្បធម៌ ស្ថាបត្យកម្មដ៏អស្ចារ្យនៃប្រាសាទបុរាណខ្មែរទៅកាន់ពិភពលោក。" 
                    data-lang-en="This website is dedicated to preserving and promoting the magnificent cultural and architectural values of ancient Khmer temples to the world.">
                     គេហទំព័រនេះបង្កើតឡើងក្នុងគោលបំណងថែរក្សា និងផ្សព្វផ្សាយនូវតម្លៃវប្បធម៌ ស្ថាបត្យកម្មដ៏អស្ចារ្យនៃប្រាសាទបុរាណខ្មែរទៅកាន់ពិភពលោក។
                 </p>
@@ -1027,7 +1090,6 @@
                     const textContentEN = titleElement.getAttribute('data-lang-en').toLowerCase();
 
                     if (textContentKM.includes(query) || textContentEN.includes(query)) {
-                        // ប្រើ "" ដើម្បីលុប Inline Style ចេញ ឱ្យវាទៅប្រើប្រាស់ display ដើមរបស់ CSS ធំ
                         card.style.display = ""; 
                     } else {
                         card.style.display = 'none';
@@ -1036,7 +1098,7 @@
             });
 
 
-            // --- 9.5 Animated Counter Logic (កែសម្រួលថ្មីសម្រាប់បង្ហាញសញ្ញា + និង M+) ---
+            // --- 9.5 Animated Counter Logic ---
             const counters = document.querySelectorAll('.counter');
             const speed = 200;
 
@@ -1089,7 +1151,6 @@
                 const emailValue = document.getElementById('emailInput').value;
                 const messageValue = document.getElementById('messageInput').value;
 
-                // លេខសម្គាល់ដែលដកស្រង់ចេញពី Google Form របស់បងផ្ទាល់
                 const formID = "1FAIpQLSfu6IADzqLKCunE2VbUKlOf3VKRgqFFWgGFub_oBfYPtcqIww"; 
                 const nameEntryID = "entry.195372849";    
                 const emailEntryID = "entry.558083367";   
@@ -1113,6 +1174,38 @@
                     contactForm.reset();
                 }, 400); 
             });
+
+
+            // --- 9.8 Lightbox Image Popup Logic (មុខងារចុចលើរូបភាពដើម្បីពង្រីកធំ) ---
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxSrc');
+            const lightboxClose = document.getElementById('lightboxClose');
+
+            // ចាប់យកគ្រប់រូបភាពទាំងអស់នៅក្នុង Gallery និងនៅលើកាតប្រាសាទ
+            const clickableImages = document.querySelectorAll('.gallery-grid img, .temple-card img');
+
+            clickableImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add('show');
+                    document.body.style.overflow = 'hidden'; // ផ្អាកការ Scroll វេបសាយពេលបើករូបភាព
+                });
+            });
+
+            // ចុចសញ្ញា (x) ដើម្បីបិទ
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('show');
+                document.body.style.overflow = ''; // បើកការ Scroll ឡើងវិញ
+            });
+
+            // ចុចលើផ្ទៃខ្មៅខាងក្រៅដើម្បីបិទ
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+
         });
     </script>
 </body>
