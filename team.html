@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-km="សមាជិកក្រុម | Our Team" data-lang-en="Our Team | Members">សមាជិកក្រុម | Our Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="icon-angkorwat.png">
+    
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --primary-color: #8b1e0f;
+            --secondary-color: #d4af37;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --text-color: #f7fafc;
+            --text-muted: #a0aec0;
+            --border-color: #4a5568;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Serif Khmer', 'Poppins', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            line-height: 1.6;
+            padding-top: 100px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER NAVIGATION (ដូចទំព័រដើម) --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 100%;
+        }
+
+        .logo h2 { 
+            font-size: 1.4rem; 
+            margin: 0; 
+            color: var(--primary-color); 
+        }
+        
+        [data-theme="dark"] .logo h2 { 
+            color: var(--secondary-color); 
+        }
+
+        .nav-controls { 
+            display: flex; 
+            gap: 15px; 
+            align-items: center; 
+        }
+        
+        .controls-btn { 
+            background: none; 
+            border: none; 
+            font-size: 1.2rem; 
+            cursor: pointer; 
+            color: var(--text-color); 
+        }
+        
+        .lang-btn { 
+            font-weight: bold; 
+            font-size: 0.9rem; 
+            border: 1px solid var(--border-color); 
+            padding: 4px 10px; 
+            border-radius: 20px; 
+        }
+
+        /* --- BACK BUTTON --- */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: var(--card-bg);
+        }
+
+        .back-btn:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateX(-3px);
+        }
+
+        /* --- INFO HEADER & BIG LOGO --- */
+        .info-header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 35px;
+        }
+
+        .university-logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .info-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        [data-theme="dark"] .info-header h2 {
+            color: var(--secondary-color);
+        }
+
+        .subject {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .lecturer {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        /* --- TEAM GRID & CARDS --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .team-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-color: var(--secondary-color);
+        }
+
+        .member-details {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .role {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        [data-theme="dark"] .role {
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            background-color: var(--bg-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        [data-theme="dark"] .social-icons a:hover {
+            background-color: var(--secondary-color);
+            color: #1a202c;
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 80px; }
+            .info-header h2 { font-size: 1.7rem; }
+            .subject { font-size: 1.15rem; }
+            .lecturer { font-size: 1rem; }
+            .team-grid { grid-template-columns: 1fr; }
+            .team-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="icon-angkorwat.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 25%; object-fit: cover;">
+                <h2 data-lang-km="ប្រាសាទកម្ពុជា" data-lang-en="Cambodian Temples">ប្រាសាទកម្ពុជា</h2>
+            </div>
+            <div class="nav-controls">
+                <button id="langBtn" class="controls-btn lang-btn">EN</button>
+                <button id="darkModeBtn" class="controls-btn">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> <span data-lang-km="ត្រឡប់ក្រោយ" data-lang-en="Back to Home">ត្រឡប់ក្រោយ</span>
+        </a>
+
+        <div class="info-header">            
+            <h2 data-lang-km="សមាសភាពសមាជិកក្រុម" data-lang-en="Project Team Members">សមាសភាពសមាជិកក្រុម</h2>
+            <div class="subject">Architecture and Operation System</div>
+            <div class="lecturer">
+                <span data-lang-km="បង្រៀនដោយលោកគ្រូ៖ សំ វិច្ឆិកា" data-lang-en="Lecturer: Sam Vicheka">បង្រៀនដោយលោកគ្រូ៖ សំ វិច្ឆិកា</span>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            
+            <div class="team-card">
+                <div class="member-details">
+                    <h3 data-lang-km="១. ភា សិរីវឌ្ឍនៈ" data-lang-en="1. Phea Sereyvathanak">១. ភា សិរីវឌ្ឍនៈ</h3>
+                    <div class="role" data-lang-km="សមាជិកក្រុម" data-lang-en="Team Member">សមាជិកក្រុម</div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-details">
+                    <h3 data-lang-km="២. រឿន​ រដ្ឋា" data-lang-en="2. Roeun Ratha">២. រឿន​ រដ្ឋា</h3>
+                    <div class="role" data-lang-km="សមាជិកក្រុម" data-lang-en="Team Member">សមាជិកក្រុម</div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-details">
+                    <h3 data-lang-km="៣. បេន ធន់" data-lang-en="3. Ben Thoun">៣. បេន ធន់</h3>
+                    <div class="role" data-lang-km="សមាជិកក្រុម" data-lang-en="Team Member">សមាជិកក្រុម</div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-details">
+                    <h3 data-lang-km="៤. សុង ទិត្យបុញ្ញា" data-lang-en="4. Song Tithbonha">៤. សុង ទិត្យបុញ្ញា</h3>
+                    <div class="role" data-lang-km="សមាជិកក្រុម" data-lang-en="Team Member">សមាជិកក្រុម</div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="member-details">
+                    <h3 data-lang-km="៥. វ៉ង់ តុលា" data-lang-en="5. Vang Tola">៥. វ៉ង់ តុលា</h3>
+                    <div class="role" data-lang-km="សមាជិកក្រុម" data-lang-en="Team Member">សមាជិកក្រុម</div>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- ប្រព័ន្ធប្តូរភាសា (Language Toggle) ---
+            let currentLang = 'km';
+            const langBtn = document.getElementById('langBtn');
+            langBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'km' ? 'en' : 'km';
+                langBtn.textContent = currentLang === 'km' ? 'EN' : 'ខ្មែរ';
+                document.querySelectorAll('[data-lang-km]').forEach(el => {
+                    el.textContent = currentLang === 'km' ? el.getAttribute('data-lang-km') : el.getAttribute('data-lang-en');
+                });
+            });
+
+            // --- ប្រព័ន្ធ Dark / Light Mode ---
+            const darkModeBtn = document.getElementById('darkModeBtn');
+            
+            if(localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                darkModeBtn.textContent = '☀️';
+            }
+
+            darkModeBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    darkModeBtn.textContent = '🌙';
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    darkModeBtn.textContent = '☀️';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
